@@ -200,7 +200,66 @@ int main(){
 > Vector - new fancy templatized type
 
 - [x] Include vector `#include <vector>`
+  - [ ] Using a vector, pass what type used in `<>`
 - [x] Create a vector instead of an array
+- [x] Need C++ 11 to compile vectors `g++ --std=c++20 oop.cpp`
+- [ ] Create a vector of class
+
+#### Code with vectors
+
+```c++
+#include <iostream>
+#include <vector>
+
+class Point {
+    public:
+       int x;
+       int y; 
+};
+
+int main(){
+    // points are (x,y) cordinates:
+        // (0,1)
+        // (2,2)
+        // (2,3)
+        // (3,4)
+        // (4,5)
+
+    //initialize the points
+    std::vector<Point> points = {{ 0,1 }, {2,2}, {2,3}, {3,4}, {4,5}};
+
+    //loop through
+    for(int i=0; i<5; i++){
+        std::cout << "(" << points.at(i).x << " , " << points.at(i).y << ")" << std::endl;
+    }
+
+    
+    return 0;
+}
+```
+
+- [x] Can use *Arrange-based* `for` loop
+
+```c++
+for(auto point : points){
+        
+}
+
+//or 
+
+for(const auto& point : points){
+        
+    }
+
+```
+
+#### POD Class - Plain Old Data Class
+> POD Class is there to store data.
+> It doesn't have any functionality 
+>
+> - [x] Change the POD Class to have some additional functionality, meaning:-
+> - Create 
+> 
 
 
 | Private                                             | Known as *live*                                        |
