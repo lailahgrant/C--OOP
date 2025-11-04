@@ -12,6 +12,8 @@
 - 🔋  [What is a Class and Object?](#Class-object)
 - 🚀 [Difference between a Class and Object](#Class-and-Object)
 - ⚙️ [Vectors](#vectors)
+- 🚀 [POD Class](#pod-class)
+- 
 
 ##  <br /> <a name="introduction">✨ Introduction</a>
 
@@ -253,13 +255,19 @@ for(const auto& point : points){
 
 ```
 
-#### POD Class - Plain Old Data Class
+##  <br /> <a name="pod-class">🚀 POD Class</a>
+
+### POD Class - Plain Old Data Class
 > POD Class is there to store data.
 > It doesn't have any functionality 
 >
 > - [x] Change the POD Class to have some additional functionality, meaning:-
-> - Create 
-> 
+> - Create a function and tie it to instances of the class
 
+- [x] **Function** on an *object* is a `method`. 
+> Function and Method are both functions :- the only difference is a `method is attached to an object`.
+
+#### Difference between a Class and a Struct 
+> Interms of usage (when to use a class or struct)
 
 | Private                                             | Known as *live*                                        |
