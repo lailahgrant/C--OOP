@@ -13,7 +13,7 @@
 - 🚀 [Difference between a Class and Object](#Class-and-Object)
 - ⚙️ [Vectors](#vectors)
 - 🚀 [POD Class](#pod-class)
-- 
+- 🔋 [What are methods](#methods)
 
 ##  <br /> <a name="introduction">✨ Introduction</a>
 
@@ -30,6 +30,7 @@ Object Oriented Programming using C++. This involves using `Classes` and `Object
   - [ ] The above command creates a file `a.out`
   - [ ] Execute the `a.out` file in CLI as `./a.out`
 - [x] Basic C++ program as follows:
+
 ```c
 #include <iostream>
 
@@ -255,6 +256,45 @@ for(const auto& point : points){
 
 ```
 
+#### C++ program with a vector and arranged for loop
+
+```c++
+#include <iostream>
+#include <vector>
+
+class Point {
+    public:
+       int x;
+       int y; 
+};
+
+int main(){
+    // points are (x,y) cordinates:
+        // (0,1)
+        // (2,2)
+        // (2,3)
+        // (3,4)
+        // (4,5)
+
+    //initialize the points
+    std::vector<Point> points = {{ 0,1 }, {2,2}, {2,3}, {3,4}, {4,5}};
+
+
+    //Arrange-based for loop
+    for(auto point : points){
+        std::cout << "(" << point.x << " , " << point.y << ")" << std::endl;
+    }
+
+    //loop through
+    for(int i=0; i<5; i++){
+        std::cout << "(" << points.at(i).x << " , " << points.at(i).y << ")" << std::endl;
+    }
+
+    
+    return 0;
+}
+```
+
 ##  <br /> <a name="pod-class">🚀 POD Class</a>
 
 ### POD Class - Plain Old Data Class
@@ -269,5 +309,75 @@ for(const auto& point : points){
 
 #### Difference between a Class and a Struct 
 > Interms of usage (when to use a class or struct)
+>
+> It's a convension, if you have a plain old data structrue - define it as a `struct`
+> Use `struct` keyword
+> Recommendable to use a `class`
+> `struct` organises data by convension
+> All data in a struct is public
+
+```c++
+#include <iostream>
+#include <vector>
+
+struct Point {
+    int x;
+    int y; 
+};
+```
+
+##  <br /> <a name="methods">🔋 What are methods</a>
+
+> Methods are functions defined inside of a class  and every object created from this class will have the method attached to it.
+
+```c++
+#include <iostream>
+#include <vector>
+
+class Point
+{
+public:
+    int x;
+    int y;
+
+    void print() // void print() const {}
+    {
+        std::cout << "(" << x << ", " << y << ")" << std::endl;
+    }
+};
+
+int main()
+{
+    // points are (x,y) cordinates:
+    // (0,1)
+    // (2,2)
+    // (2,3)
+    // (3,4)
+    // (4,5)
+
+    // initialize the points
+    std::vector<Point> points = {{0, 1}, {2, 2}, {2, 3}, {3, 4}, {4, 5}};
+
+    // Arrange-based for loop
+    // for (const auto& point: points)
+    for (auto point : points) // creates a variable print of type prints
+    {
+        point.print();
+    }
+
+    /**
+    * naming convensions
+    Point --> class
+    point --> object (an instance of that class)
+    points --> collection of objects
+    */
+
+    return 0;
+}
+```
+
+#### Methods that take arguments and return data
+- [x] 
+
 
 | Private                                             | Known as *live*                                        |
